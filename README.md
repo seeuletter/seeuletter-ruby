@@ -101,6 +101,15 @@ seeuletter = Seeuletter::Client.new(api_key: 'test_12345678901234567890')
 
 puts seeuletter.letters.find('LETTER_ID')
 ```
+#### Get the price of a letter
+
+```ruby
+require 'seeuletter'
+
+seeuletter = Seeuletter::Client.new(api_key: 'test_12345678901234567890')
+
+puts seeuletter.letter_price.get(color: 'bw', postage_type: 'prioritaire', postage_speed: 'D1', page_count: 1)
+```
 
 #### Caution: Pass zero-prefixed postal codes as strings
 

@@ -1,4 +1,5 @@
 require "seeuletter/resources/letter"
+require 'seeuletter/resources/letter_price'
 
 module Seeuletter
   class Client
@@ -17,5 +18,8 @@ module Seeuletter
       Seeuletter::Resources::Letter.new(config)
     end
 
+    def letter_price
+      Seeuletter::Resources::LetterPrice.new(config)
+    end
   end
 end
