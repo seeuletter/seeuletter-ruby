@@ -2,6 +2,7 @@
 
 
 [![Gem Version](https://badge.fury.io/rb/seeuletter.svg)](https://badge.fury.io/rb/seeuletter)
+[![Dependency Status](https://gemnasium.com/badges/github.com/seeuletter/seeuletter-ruby.svg)](https://gemnasium.com/github.com/seeuletter/seeuletter-ruby)
 
 
 Ruby wrapper for the [Seeuletter.com](https://www.seeuletter.com) API. See the full Seeuletter.com [API Documentation](https://docs.seeuletter.com/?ruby#).  For best results, be sure that you're using the latest version of the Seeuletter API and the latest version of the ruby wrapper. This gem gives you an ActiveRecord-style syntax to use the Seeuletter.com API.
