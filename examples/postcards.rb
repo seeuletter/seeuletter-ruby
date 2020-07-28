@@ -31,9 +31,10 @@ html = %(
 </html>
 )
 
-# send the letter
+# list all postcards sent
 puts seeuletter.postcards.list
 
+# send a dummy the letter
 puts seeuletter.postcards.create(
   description: 'Test letter from the Ruby Wrapper',
   to: {
