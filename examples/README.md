@@ -10,8 +10,12 @@ cd examples/
 
 ## Examples
 
-
 ### Create a letter
 ```
 ruby letters.rb
+```
+
+### Create an electronic letter
+```
+ruby letters_electronic.rb
 ```
