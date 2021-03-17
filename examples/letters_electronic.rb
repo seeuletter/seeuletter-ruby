@@ -44,6 +44,5 @@ puts seeuletter.letters.createElectronic(
     postage_type: 'lre',
     variables: {
         name: 'Erlich'
-    },
-    color: 'color'
+    }
 )
