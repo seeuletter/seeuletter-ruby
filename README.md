@@ -83,6 +83,32 @@ puts seeuletter.letters.create(
 )
 ```
 
+#### Create a new electronic letter
+
+```ruby
+# send the letter
+require 'seeuletter'
+
+# initialize Seeuletter object
+seeuletter = Seeuletter::Client.new(api_key: '<PUT_YOU_API_KEY_HERE>')
+
+puts seeuletter.letters.createElectronic(
+    description: "Test electronic letter from the Ruby Wrapper",
+    to: {
+        email: 'erlich.dumas@example.com',
+        first_name: 'Erlich',
+        last_name: 'Dumas',
+        status: 'individual'
+    },
+    source_file: '<html>Hello {{name}}</html>',
+    source_file_type: 'html',
+    postage_type: 'lre',
+    variables: {
+    	name: 'Erlich'
+    }
+)
+```
+
 #### List all letters
 
 ```ruby
