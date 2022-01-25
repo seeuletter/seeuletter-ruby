@@ -15,6 +15,9 @@ Supports Ruby 2.0.0 and greater.
   - [Registration](#registration)
   - [Installation](#installation)
   - [Usage](#usage)
+  - [Letters](#letters)
+  - [Accounts](#accounts)
+  - [Invoices](#invoices)
 - [Examples](#examples)
 
 ## Getting Started
@@ -55,6 +58,8 @@ For optional parameters and other details, refer to the docs [here](https://docs
 # To initialize a Seeuletter object
 seeuletter = Seeuletter::Client.new(api_key: "your-api-key")
 ```
+
+### Letters
 
 #### Create a new letter
 
@@ -136,6 +141,64 @@ require 'seeuletter'
 seeuletter = Seeuletter::Client.new(api_key: 'test_12345678901234567890')
 
 puts seeuletter.letter_price.get(color: 'bw', postage_type: 'prioritaire', postage_speed: 'D1', page_count: 1)
+```
+
+### Accounts
+
+#### Create a new account for the company
+
+```ruby
+require 'seeuletter'
+
+# initialize Seeuletter object
+seeuletter = Seeuletter::Client.new(api_key: 'test_12345678901234567890')
+
+puts seeuletter.accounts.create(
+  email: "msb.partner@example.com",
+  name: "Erlich Bachman",
+  phone: "+33104050607",
+  company_name: "MSB Partner from Ruby Wrapper",
+  address_line1: '30 rue de rivoli',
+  address_line2: '',
+  address_city: 'Paris',
+  address_country: 'France',
+  address_postalcode: '75004'
+)
+```
+
+### Update the account company email
+
+```ruby
+require 'seeuletter'
+
+# initialize Seeuletter object
+seeuletter = Seeuletter::Client.new(api_key: 'test_12345678901234567890')
+
+seeuletter.accounts.updateEmail('ACCOUNT_COMPANY_ID', "msb.partner.new@example.com")
+```
+
+
+
+### Invoices
+
+#### List all invoices for a company
+
+```ruby
+require 'seeuletter'
+
+seeuletter = Seeuletter::Client.new(api_key: 'test_12345678901234567890')
+
+puts seeuletter.invoices.list()
+```
+
+#### Get a specific invoice
+
+```ruby
+require 'seeuletter'
+
+seeuletter = Seeuletter::Client.new(api_key: 'test_12345678901234567890')
+
+puts seeuletter.invoices.find('INVOICE_ID')
 ```
 
 #### Caution: Pass zero-prefixed postal codes as strings
