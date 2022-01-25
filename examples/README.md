@@ -19,3 +19,13 @@ ruby letters.rb
 ```
 ruby letters_electronic.rb
 ```
+
+### Create and update account
+```
+ruby accounts.rb
+```
+
+### Get invoices
+```
+ruby invoices.rb
+```
