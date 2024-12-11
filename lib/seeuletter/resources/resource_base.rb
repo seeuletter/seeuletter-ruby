@@ -93,7 +93,7 @@ module Seeuletter
       end
 
       def base_url
-        "https://#{config[:api_key]}:@api.seeuletter.com"
+        "https://#{config[:api_key]}:@api#{@config[:staging] ? '-staging.mysendingbox.fr' : '.seeuletter.com'}"
       end
 
       def endpoint_url
