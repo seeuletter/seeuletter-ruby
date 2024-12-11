@@ -12,9 +12,14 @@ begin
     )
     puts "The Seeuletter API Invoices responded : #{list_response}"
 
-    # get single invoice by API
-    find_response = seeuletter.invoices.find(list_response['invoices'][0]['_id'])
-    puts "The Seeuletter API Invoice responded : #{find_response}"
+    if list_response['invoices'].count > 0
+        # get single invoice by API
+        find_response = seeuletter.invoices.find(list_response['invoices'][0]['_id'])
+        puts "The Seeuletter API Invoice responded : #{find_response}"
+    else
+        # no invoice to get by API
+        puts "No invoice can be found"
+    end
 
 rescue Seeuletter::SeeuletterError => ex
     puts "Error from API : #{ex}"
