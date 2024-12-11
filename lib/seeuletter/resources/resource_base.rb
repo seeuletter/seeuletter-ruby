@@ -93,7 +93,7 @@ module Seeuletter
       end
 
       def base_url
-        "https://#{config[:api_key]}:@api.seeuletter.com"
+        "https://#{config[:api_key]}:@#{config[:host].nil? ? 'api.seeuletter.com' : config[:host]}"
       end
 
       def endpoint_url
