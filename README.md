@@ -59,6 +59,11 @@ For optional parameters and other details, refer to the docs [here](https://docs
 seeuletter = Seeuletter::Client.new(api_key: "your-api-key")
 ```
 
+```ruby
+# To initialize a Seeuletter object configured with non default host api
+seeuletter = Seeuletter::Client.new(api_key: "your-api-key", host: "127.0.0.1")
+```
+
 ### Letters
 
 #### Create a new letter
@@ -227,6 +232,6 @@ There are simple scripts to demonstrate how to create all letters with the Seeul
 
 =======================
 
-Copyright &copy; 2017 Seeuletter.com
+Copyright &copy; 2024 Seeuletter.com
 
 Released under the MIT License, which can be found in the repository in `LICENSE.txt`.
